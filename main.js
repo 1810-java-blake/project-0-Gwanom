@@ -1,21 +1,3 @@
-var gameDeck = {};
-
-//TODO: function should support drawing a variable number of cards
-//this function may no longer be able to see playerHand
-function drawCards(cardCount){
-    fetch(`https://deckofcardsapi.com/api/deck/${gameDeck.deck_id}/draw/?count=${cardCount}`)
-            .then(res => res.json())
-            .then(newCard => {
-                //this part is broken for cardCount > 1
-                let img = document.createElement("img");
-                img.setAttribute("src", newCard.cards[0].image);
-                //if this fucks up jose was right
-                img.setAttribute("width", "20%");
-                playerHand.appendChild(img);
-            })
-            .catch(err => console.log(err));
-}
-
 document.addEventListener("DOMContentLoaded", () => {
     let playerGamesWon = houseGamesWon = 0;
     let newBtn = document.getElementById("newGame");
@@ -24,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let playerHand = document.getElementById("playerHand");
     let houseScore = document.getElementById("houseTotal");
     let houseHand = document.getElementById("houseHand");
+    var gameDeck = {};
 
     //generate a new deck to play the game
     fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
@@ -44,12 +27,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 //the dealer's first card should not be visible 
                 //to the player TODO: get back of card image
             })
-            //.then(drawCards(2)) ??
             .catch(err => console.log(err));
     });
 
-    drawBtn.addEventListener("click", drawCards(1));
+    drawBtn.addEventListener("click", event => {
+        fetch(`https://deckofcardsapi.com/api/deck/${gameDeck.deck_id}/draw/?count=1`)
+            // .json() method returns a Promise
+            // of the response body parsed from JSON
+            .then(res => res.json())
+            .then(newCard => {
+                let img = document.createElement("img");
+                img.setAttribute("src", newCard.cards[0].image);
+                //if this fucks up jose was right
+                img.setAttribute("width", "20%");
+                playerHand.appendChild(img);
+            })
+            .catch(err => console.log(err));
+    });
 });
+
 // obj.cards.forEach(x =>{
 //     let img = document.createElement("img");
 //     img.setAttribute("src", x.image);
