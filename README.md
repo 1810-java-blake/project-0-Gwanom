@@ -16,3 +16,5 @@ Planned/Future features:
         - If the site were to go live, there exists the potential for the list to become massive; it may be hundereds of hours long.
     Info:
         - A more in-depth explanation of the project?
+
+list URI: spotify:user:tittermonkey:playlist:0LK6wd2PcCVO06jbWRYnWB
