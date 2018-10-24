@@ -9,8 +9,8 @@
 <body>
     <h1>Web Based Playlist Editor for Spotify<span id="registered">®</span></h1>
 
-    <script src="https://sdk.scdn.co/spotify-player.js"></script>
-    <!-- We will insert our code here. -->
+    <!-- <script src="https://sdk.scdn.co/spotify-player.js"></script> -->
+    <!-- if player becomes necessary, uncomment ^ -->
     <script src="main.js"></script>
 
     <table>
@@ -26,11 +26,10 @@
                 </iframe>
             </td>
             <td id="searchForm" class="button">
-                <!-- please fix this lmao ^^^ -->
                 <form>
                     <label>Search for a(n):
                         <div class="styled-select spotify-green rounded">
-                            <select>
+                            <select id="typeSelect">
                                 <option>Album</option>
                                 <option>Artist</option>
                                 <option>Playlist</option>
@@ -38,7 +37,7 @@
                             </select>
                         </div>
                     </label>
-                    <input type="text" id="query" />
+                    <input name="searchText" type="text" id="searchText" />
                     <button id="searchButton" type="button" class="rounded spotify-green">SEARCH</button>
                 </form>
             </td>
