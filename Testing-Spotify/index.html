@@ -3,23 +3,51 @@
 
 <head>
     <title>Spotify Playlist Editor</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> 
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 
 <body>
-    <h1>Spotify Web Playback SDK Quick Start Tutorial</h1>
+    <h1>Web Based Playlist Editor for Spotify<span id="registered">®</span></h1>
 
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
     <!-- We will insert our code here. -->
     <script src="main.js"></script>
-    <iframe src="https://open.spotify.com/follow/1/?uri=spotify:user:tittermonkey&size=detail&theme=dark"
-    width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" 
-    allowtransparency="true">
-    </iframe> 
-    <br />
-    <iframe src="https://open.spotify.com/embed/user/tittermonkey/playlist/0LK6wd2PcCVO06jbWRYnWB" 
-    width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media">
-    </iframe>
+
+    <table>
+        <tr>
+            <td>
+                <iframe src="https://open.spotify.com/follow/1/?uri=spotify:user:tittermonkey&size=detail&theme=dark"
+                    width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;"
+                    allowtransparency="true">
+                </iframe>
+                <br />
+                <iframe src="https://open.spotify.com/embed/user/tittermonkey/playlist/0LK6wd2PcCVO06jbWRYnWB" width="300"
+                    height="380" frameborder="0" allowtransparency="true" allow="encrypted-media">
+                </iframe>
+            </td>
+            <td id="searchForm" class="button">
+                <!-- please fix this lmao ^^^ -->
+                <form>
+                    <label>Search for a(n):
+                        <div class="styled-select spotify-green rounded">
+                            <select>
+                                <option>Album</option>
+                                <option>Artist</option>
+                                <option>Playlist</option>
+                                <option>Track</option>
+                            </select>
+                        </div>
+                    </label>
+                    <input type="text" id="query" />
+                    <button id="searchButton" type="button" class="rounded spotify-green">SEARCH</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+
+        </tr>
+    </table>
+
 
 </body>
 

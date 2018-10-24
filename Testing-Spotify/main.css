@@ -1,8 +1,72 @@
-body{
-    background-color: #191414;
+@font-face {
+    font-family: 'spotify-circular';
+    src: url('https://open.scdn.co/fonts/CircularSpUIv3T-Light.woff2') format('woff2'), url('https://open.scdn.co/fonts/CircularSpUIv3T-Light.woff') format('woff'), url('https://open.scdn.co/fonts/CircularSpUIv3T-Light.ttf') format('ttf');
+    font-weight: 200;
+    font-style: normal;
 }
 
-h1, h2{
-    color: #FFFFFF;
-    font-family: Circular,Helvetica,Arial,sans-serif;
+body {
+    background-color: #191414; /*spotify branded black*/
+    color: white;
+    font-family: 'spotify-circular';
 }
+
+select {
+    background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+    height: 29px;
+    overflow: hidden;
+    width: 80px;
+}
+
+td{
+    align-content: center;
+    padding: 5px;
+}
+.styled-select select{
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 29px;
+    padding: 5px;
+    width: 80px;
+    color: white;
+}
+
+.styled-select{
+    width:80px;
+}
+.rounded {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+ }
+
+ .spotify-green { 
+     background-color: #1DB954; 
+}
+
+.button {
+    vertical-align: top;
+}
+
+#searchButton {
+    border: none;
+    text-align: center;
+    color: white;
+    font-size: 11px;
+    padding: 10px;
+    font-family: 'spotify-circular';
+    font-stretch: 100%;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#searchButton:hover {
+    background-color: #2EBD59;
+}
+
+#registered {
+    font-size: 8px;
+}
+
+/* #2ebd59 hover green */
