@@ -25,21 +25,26 @@
                     height="380" frameborder="0" allowtransparency="true" allow="encrypted-media">
                 </iframe>
             </td>
-            <td id="searchForm" class="button">
+            <td id="searchForm" class="button" style="width:300px;">
                 <form>
                     <label>Search for a(n):
                         <div class="styled-select spotify-green rounded">
                             <select id="typeSelect">
-                                <option>Album</option>
-                                <option>Artist</option>
-                                <option>Playlist</option>
-                                <option>Track</option>
+                                <option>album</option>
+                                <option>artist</option>
+                                <option>playlist</option>
+                                <option>track</option>
                             </select>
                         </div>
                     </label>
-                    <input name="searchText" type="text" id="searchText" />
+                    <input name="searchText" type="text" id="searchText"  class="rounded"/>
                     <button id="searchButton" type="button" class="rounded spotify-green">SEARCH</button>
                 </form>
+            </td>
+            <td>
+               <table id ="results">
+
+               </table> 
             </td>
         </tr>
         <tr>

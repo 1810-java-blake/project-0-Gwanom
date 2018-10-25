@@ -1,5 +1,5 @@
-option{color: black;}
-.styled-select{width: 80px;}
+option{ background-color: #2EBD59; }
+.styled-select { width: 80px; }
 .spotify-green { background-color: #1DB954; }
 .button { vertical-align: top; }
 .results-table{ border-bottom: 1px solid #ddd; }
@@ -26,7 +26,7 @@ select {
     width: 80px;
 }
 
-td{
+td {
     align-content: center;
     padding: 5px;
 }
@@ -43,7 +43,7 @@ td{
 .rounded {
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
-    border-radius: 20px;
+    border-radius: 30px;
  }
 
 #searchButton {

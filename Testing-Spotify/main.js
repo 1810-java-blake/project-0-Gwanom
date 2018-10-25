@@ -40,6 +40,15 @@ function append(parent, el) {
     return parent.appendChild(el);
 }
 
+app.get('/login', function(req, res) {
+    var scopes = 'user-read-private user-read-email';
+    res.redirect('https://accounts.spotify.com/authorize' +
+      '?response_type=code' +
+      '&client_id=' + my_client_id +
+      (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
+      '&redirect_uri=' + encodeURIComponent(redirect_uri));
+    });
+
 document.addEventListener("DOMContentLoaded", () => {
     let searchBtn = document.getElementById("searchButton");
 
@@ -52,9 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((resp) => resp.json())
         .then(function(data) {
             let results = data.items;
-            return results.map(function(item){
+            console.log(results);
 
-            })
         })
         .catch(function(error) {
             console.log(error);
