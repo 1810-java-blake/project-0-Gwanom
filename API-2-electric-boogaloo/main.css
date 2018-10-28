@@ -27,7 +27,6 @@ tr:hover {
 
 .button {
     margin: 5px;
-    padding: 5px;
     border: 1px solid mediumblue;
     background-color: mediumblue;
     color: white;
@@ -41,6 +40,7 @@ tr:hover {
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 30px;
+    padding: 5px;
 }
 
 a {
