@@ -7,26 +7,20 @@
     <title>Star Wars Datapoint</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="icon" type="image/png" href="icon.png" />
 </head>
 
 <body>
-    <p>People | <a href="planets.html">Planets</a> | <a href="ships.html">Ships</a></p>
-    <input type="text" id="searchField" />
-    <button id="searchBtn">Search</button>
-    <table id="resultsTable">
-        <thead id="tableHeader">
-            <tr>
-                <th>Name</th>
-                <th>Homeworld</th>
-                <th>Birth Year</th>
-                <th>Film Appearances</th>
-            </tr>
-        </thead>
-        <tbody id="results">
-
-        </tbody>
-    </table>
+    <h1>Star Wars Datapoint using SWAPI</h1>
+    <p>
+        This site makes requests to the Star Wars API; it allows you to search for people, planets,
+        or starships within the Star Wars universe.
+    </p>
+    <div id="buttons">
+        <span class="rounded button"><a href="people.html">People</a></span>
+        <span class="rounded button"><a href="planets.html">Planets</a></span>
+        <span class="rounded button"><a href="ships.html">Starships</a></span>
+    </div>
 </body>
 
 </html>
