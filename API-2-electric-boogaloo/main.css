@@ -1,8 +1,6 @@
 @font-face {
     font-family: 'spotify-circular';
-    src: url('https://open.scdn.co/fonts/CircularSpUIv3T-Light.woff2') format('woff2'), 
-    url('https://open.scdn.co/fonts/CircularSpUIv3T-Light.woff') format('woff'), 
-    url('https://open.scdn.co/fonts/CircularSpUIv3T-Light.ttf') format('ttf');
+    src: url('https://open.scdn.co/fonts/CircularSpUIv3T-Light.woff2') format('woff2'), url('https://open.scdn.co/fonts/CircularSpUIv3T-Light.woff') format('woff'), url('https://open.scdn.co/fonts/CircularSpUIv3T-Light.ttf') format('ttf');
     font-weight: 200;
     font-style: normal;
 }
@@ -13,8 +11,25 @@ body {
     font-family: 'spotify-circular';
 }
 
+#homepage {
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+    text-align: center;
+}
+
+
 table {
-    width: 80%;
+    width: 95%;
+    margin: auto;
+    text-transform: capitalize;
+    border-collapse: collapse;
+}
+
+.topnav {
+    text-align: center;
+    margin: auto;
+    width: 30%;
 }
 
 th, td {
@@ -64,7 +79,7 @@ a {
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 150px;
+    width: 220px;
     background-color: black;
     color: #fff;
     text-align: center;
@@ -72,21 +87,21 @@ a {
     padding: 5px 0;
     position: absolute;
     z-index: 1;
-    bottom: 150%;
+    top: 150%;
     left: 50%;
-    margin-left: -75px;
+    margin-left: -110px;
 }
 
-.tooltip .tooltiptext::after {
+/* .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
-    top: 100%;
+    bottom: 100%;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
     border-color: black transparent transparent transparent;
-}
+} */
 
 .tooltip:hover .tooltiptext {
     visibility: visible;

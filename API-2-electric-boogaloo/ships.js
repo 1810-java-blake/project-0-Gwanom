@@ -83,7 +83,7 @@ function tabulateResponse(response) {
          <td>${element.manufacturer}</td>
          <td>${element.starship_class}</td>
          <td>
-         <div class="tooltip">${element.films.length}<span class="tooltiptext">TEST</span></div>
+         <div class="tooltip">${element.films.length}<span class="tooltiptext">${filmsString}</span></div>
          </td>`;
          resultRows.appendChild(tr);
     });
