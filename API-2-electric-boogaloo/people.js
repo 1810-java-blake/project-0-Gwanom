@@ -43,13 +43,26 @@ function replaceHeader() {
     while (thead.firstChild) {
         thead.removeChild(thead.firstChild);
     }
-    thead.innerHTML = 
+    thead.innerHTML =
         `<tr>
          <th>Name</th>
          <th>Homeworld</th>
          <th>Birth Year</th>
          <th>Film Appearances</th>
          </tr>`;
+}
+
+function parseFilmURL(filmURL) {
+    let filmDictionary = {
+        "https://swapi.co/api/films/1/": "A New Hope",
+        "https://swapi.co/api/films/2/": "The Empire Strikes Back",
+        "https://swapi.co/api/films/3/": "Return of The Jedi",
+        "https://swapi.co/api/films/4/": "The Phantom Menace",
+        "https://swapi.co/api/films/5/": "Attack of the Clones",
+        "https://swapi.co/api/films/6/": "Revenge of the Sith",
+        "https://swapi.co/api/films/7/": "The Force Awakens"
+   };
+   return filmDictionary[filmURL];
 }
 
 function tabulateResponse(response) {
@@ -60,6 +73,10 @@ function tabulateResponse(response) {
     replaceHeader();
 
     response.results.forEach(element => {
+        var filmsString = "";
+        element.films.forEach(film => {
+            filmsString += `${parseFilmURL(film)} <br />`;
+        });
         fetch(element.homeworld)
             .then(readResponseAsJSON)
             .then(logResult)
@@ -70,7 +87,9 @@ function tabulateResponse(response) {
                      <td>${homeworld.name}</td>
                      <td>${element.birth_year}</td>
                      <td>
-                     <div class="tooltip">${element.films.length}<span class="tooltiptext">TEST</span></div>
+                     <div class="tooltip">${element.films.length}
+                     <span class="tooltiptext">${filmsString}</span>
+                     </div>
                      </td>`;
                 resultRows.appendChild(tr);
 

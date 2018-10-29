@@ -52,6 +52,19 @@ function replaceHeader() {
          <th>Film Appearances</th></tr>`;
 }
 
+function parseFilmURL(filmURL) {
+    let filmDictionary = {
+        "https://swapi.co/api/films/1/": "A New Hope",
+        "https://swapi.co/api/films/2/": "The Empire Strikes Back",
+        "https://swapi.co/api/films/3/": "Return of The Jedi",
+        "https://swapi.co/api/films/4/": "The Phantom Menace",
+        "https://swapi.co/api/films/5/": "Attack of the Clones",
+        "https://swapi.co/api/films/6/": "Revenge of the Sith",
+        "https://swapi.co/api/films/7/": "The Force Awakens"
+   };
+   return filmDictionary[filmURL];
+}
+
 function tabulateResponse(response) {
     let resultRows = document.getElementById("results");
     while (resultRows.firstChild) {
@@ -60,6 +73,10 @@ function tabulateResponse(response) {
     replaceHeader();
 
     response.results.forEach(element => {
+        var filmsString = '';
+        element.films.forEach(film => {
+            filmsString += `${parseFilmURL(film)} <br />`;
+        });
         let tr = document.createElement("tr");
         tr.innerHTML = 
         `<td>${element.name}</td>
