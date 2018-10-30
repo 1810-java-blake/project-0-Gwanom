@@ -18,7 +18,6 @@ body {
     text-align: center;
 }
 
-
 table {
     width: 95%;
     margin: auto;
@@ -92,7 +91,8 @@ a {
     margin-left: -110px;
 }
 
-/* .tooltip .tooltiptext::after {
+/* to add an arrow to the tooltip 
+    .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
     bottom: 100%;
